@@ -18,5 +18,24 @@ typedef struct Interface
 }
 Interface;
 
+/*
+This will give the default
+interface for the engine, it uses Raylib
+for renering and input.
+*/
+Interface getTestInterface();
+
+/*
+This function checks that the application is
+set up properly.
+returns:
+	true if the Interface is or isn't configured properly
+	but can be configured to a safe default.
+	
+	false if the Interface isn't configured
+	properly and cannot be corrected.
+*/
+bool ApplicationInitialise(Interface);
+
 //This is the function that will take the interface and then run the application
-void Application(Interface*);
+void Application(Interface);
