@@ -9,8 +9,9 @@ typedef struct Interface
 	void (*RenderInitialise)(int, int, const char*);
 	/*This will render the application's data.*/
 	void (*Render)(void*);
-	/*This will handle the input to the game.*/
-	void (*InputHandle)();
+	/*This will handle the input to the game. by
+	returning the key pressed as an integer*/
+	int (*InputHandle)();
 	/*This will be if you want to alter how the application's data is processed.*/
 	void (*specialProcess)(void*);
 
