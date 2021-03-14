@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct Interface
 {
 	/*
@@ -38,4 +41,36 @@ returns:
 bool ApplicationInitialise(Interface);
 
 //This is the function that will take the interface and then run the application
+void Application(Interface);
+
+Interface getTestInterface()
+{
+}
+
+bool ApplicationInitialise(Interface interface)
+{
+	if(interface.specialProcess == NULL)
+	{
+		printf("interface.specialProcess is null, cannot assign default, exiting program.\n");
+		return false;
+	}
+	
+	if(interface.Render == NULL)
+	{
+		printf("interface.Render is null, assigning default renderer.\n");
+	}
+	
+	if(interface.InputHandle == NULL)
+	{
+		printf("interface.InputHandle is null, cannot assign default, exiting program.\n");
+		return false;
+	}
+
+	if(interface.RenderInitialise == NULL)
+	{
+		printf("interface.RenderInitialise is null, Assigning default.\n");
+	}
+	return false;
+}
+
 void Application(Interface);
